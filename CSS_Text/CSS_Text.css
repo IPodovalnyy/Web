@@ -1,0 +1,48 @@
+body {
+    font-family: SansSerif, Arial, serif;
+    font-size: 20px;
+    line-height: normal;
+    background-color: #feeed6;
+    color: #676565;
+    margin: 6px auto 0 12px;
+}
+
+.course_name {
+    margin: 0;
+    padding: 0;
+    font-size: 32px;
+    line-height: 1.1;
+}
+
+.course_information {
+    margin: -6px 0 0 0;
+}
+
+.cross_out_text {
+    text-decoration: line-through;
+}
+
+dt {
+    float: left;
+    font-weight: bold;
+    color: #378DB2;
+}
+
+dd {
+    margin: 8px auto 10px 0;
+    text-indent: 3pt;
+}
+
+dd + dd {
+    margin: 12px auto 12px 0;
+}
+
+.last_item {
+    margin: 14px 0 0 0;
+    float: none;
+}
+
+.last_item ~ dd {
+    text-indent: 16px;
+    line-height: 1.25;
+}

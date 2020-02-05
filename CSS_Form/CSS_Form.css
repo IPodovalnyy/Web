@@ -1,0 +1,59 @@
+body {
+    font-family: SansSerif, Arial, serif;
+    font-size: 16px;
+    line-height: normal;
+    margin: 12px;
+    color: #676565;
+}
+
+h2 {
+    background-color: white;
+    font-size: 32px;
+    font-weight: normal;
+    padding-left: 22px;
+    margin: 26px 0 4px 0;
+}
+
+.set_text_field {
+    font-size: inherit;
+    color: #999999;
+    text-indent: 1em;
+    width: 100%;
+    border: none;
+    margin: 8px 0 20px 0;
+}
+
+form {
+    font-weight: bold;
+    background-color: #feeed6;
+    padding: 18px 20px 16px 22px;
+}
+
+input {
+    height: 36px;
+}
+
+textarea {
+    padding: 8px 0 0 0;
+    height: 123px;
+}
+
+span, label, button {
+    display: block;
+}
+
+.last_string {
+    font-weight: normal;
+    color: #737373;
+}
+
+button {
+    font-size: inherit;
+    font-weight: bold;
+    border: none;
+    width: 170px;
+    height: 36px;
+    margin: 12px 0 0 auto;
+    background-color: #378DB2;
+    color: white;
+}

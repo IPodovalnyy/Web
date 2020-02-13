@@ -1,0 +1,78 @@
+body {
+    font-family: SansSerif, Arial, serif;
+    font-size: 12px;
+    line-height: normal;
+}
+
+ul {
+    display: table;
+    width: 100%;
+    font-size: 20px;
+    background-color: #fed517;
+    padding:  20px 0 20px 0;
+}
+
+ li {
+    display: table-cell;
+    text-align: center;
+    width:14%;
+}
+
+li+li {
+    border-left: 1px solid black
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.panel_button
+{
+    margin: 20px 0 20px 0;
+}
+
+.panel_button  button {
+    width: 172px;
+    height: 40px;
+    border: 0;
+    background-color: #83B034;
+}
+
+.panel_button div {
+    float: right;
+}
+
+.panel_refresh {
+    width: 100%;
+    margin: 20px 0 20px 0;
+    display: block;
+}
+
+.panel_refresh div {
+    display: inline-block;
+}
+
+.refresh {
+
+
+}
+
+.panel_refresh button {
+    vertical-align: middle;
+}
+
+.panel_refresh img {
+    height: 40px;
+    width: 40px;
+
+}
+/*
+.panel_refresh button {
+    border: none;
+}
+*/
+th {
+    border-bottom: 1px solid black;
+}

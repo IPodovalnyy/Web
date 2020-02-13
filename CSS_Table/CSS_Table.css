@@ -1,27 +1,26 @@
 body {
-    font-family: SansSerif, Arial, serif;
+    font-family: Arial, sans-serif;
     font-size: 20px;
     line-height: normal;
     margin: 12px;
 }
 
-table {
+.table {
     text-align: left;
     width: 100%;
-    text-indent: 10px;
     border-collapse: collapse;
 }
 
-th, td {
+.table th, td {
+    padding: 14px 10px;
     border: 1px solid #CCC;
-    height: 50px;
 }
 
-th {
+.table th {
     background-color: #3498DB;
-    color: white;
+    color: #FFF;
 }
 
-tr:nth-last-of-type(odd) {
+.table tr:nth-last-of-type(odd) {
     background-color: #EEE;
 }

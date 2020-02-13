@@ -1,45 +1,52 @@
 body {
-    font-family: SansSerif, Arial, serif;
+    font-family: Arial, sans-serif;
     font-size: 16px;
-    line-height: normal;
-    margin: 12px;
+    margin: 0 auto;
     color: #676565;
+    max-width: 844px;
 }
 
-h2 {
-    background-color: white;
+.header {
     font-size: 32px;
     font-weight: normal;
+    letter-spacing: 1px;
     padding-left: 22px;
     margin: 26px 0 4px 0;
+    background-color: #FFF;
 }
 
 .set_text_field {
-    font-size: inherit;
-    color: #999999;
-    text-indent: 1em;
+    text-indent: 14px;
     width: 100%;
     border: none;
-    margin: 8px 0 20px 0;
 }
 
-form {
+.set_text_field:-moz-placeholder {
+    font-family: Tahoma, sans-serif;
+    color: #999;
+}
+
+.set_text_field::-webkit-input-placeholder {
+    font-family: Tahoma, sans-serif;
+    color: #999;
+}
+
+.form_order {
     font-weight: bold;
     background-color: #feeed6;
     padding: 18px 20px 16px 22px;
 }
 
-input {
-    height: 36px;
+.form_order input {
+    height: 37px;
+    margin: 8px 0 20px 0;
 }
 
-textarea {
+.form_order textarea {
+    resize: vertical;
+    height: 121px;
     padding: 8px 0 0 0;
-    height: 123px;
-}
-
-span, label, button {
-    display: block;
+    margin: 8px 0 16px 0;
 }
 
 .last_string {
@@ -47,13 +54,18 @@ span, label, button {
     color: #737373;
 }
 
-button {
-    font-size: inherit;
+.form_order button {
+    display: block;
     font-weight: bold;
     border: none;
-    width: 170px;
-    height: 36px;
+    width: 171px;
+    height: 37px;
     margin: 12px 0 0 auto;
     background-color: #378DB2;
-    color: white;
+    color: #FFF;
+}
+
+button:hover {
+    background-color: #479DC2;
+    cursor: pointer;
 }

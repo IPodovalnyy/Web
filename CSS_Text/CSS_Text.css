@@ -1,48 +1,52 @@
 body {
-    font-family: SansSerif, Arial, serif;
-    font-size: 20px;
-    line-height: normal;
+    font-family: Arial, sans-serif;
+    font-size: 19px;
     background-color: #feeed6;
     color: #676565;
-    margin: 6px auto 0 12px;
+    margin: 6px 12px 0 12px;
+    max-width: 826px;
 }
 
-.course_name {
+.course_name p {
     margin: 0;
-    padding: 0;
-    font-size: 32px;
-    line-height: 1.1;
-}
-
-.course_information {
-    margin: -6px 0 0 0;
+    font-size: 31px;
+    line-height: 1.12;
 }
 
 .cross_out_text {
     text-decoration: line-through;
 }
 
-dt {
+.course_information {
+    margin: -4px 0 0 0;
+}
+
+.course_information dt {
     float: left;
     font-weight: bold;
     color: #378DB2;
 }
 
-dd {
-    margin: 8px auto 10px 0;
-    text-indent: 3pt;
+.course_information dd {
+    margin: 10px auto 10px 0;
+    text-indent: 5px;
+    text-align: justify;
 }
 
-dd + dd {
+.course_information dd + dd {
     margin: 12px auto 12px 0;
 }
 
 .last_item {
-    margin: 14px 0 0 0;
-    float: none;
+    margin: 5px 0 0 0;
+}
+
+.last_item + dd {
+    margin: 45px 0 0 0;
 }
 
 .last_item ~ dd {
-    text-indent: 16px;
-    line-height: 1.25;
+    font-size: 16px;
+    text-indent: 18px;
+    line-height: 1.5;
 }

@@ -21,19 +21,19 @@ body {
     margin: -4px 0 0 0;
 }
 
-.course_information dt {
+.course_information span {
     float: left;
     font-weight: bold;
     color: #378DB2;
 }
 
-.course_information dd {
+.course_information p {
     margin: 10px auto 10px 0;
     text-indent: 5px;
     text-align: justify;
 }
 
-.course_information dd + dd {
+.course_information p + p {
     margin: 12px auto 12px 0;
 }
 
@@ -41,11 +41,11 @@ body {
     margin: 5px 0 0 0;
 }
 
-.last_item + dd {
+.last_item + p {
     margin: 45px 0 0 0;
 }
 
-.last_item ~ dd {
+.last_item ~ p {
     font-size: 16px;
     text-indent: 18px;
     line-height: 1.5;

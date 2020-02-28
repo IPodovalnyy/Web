@@ -1,0 +1,49 @@
+body {
+    font-family: arial sans-serif;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.temperatures {
+    display: flex;
+    flex-direction: row;
+    background-color: #87CEFA;
+    align-items: center;
+    padding: 10px;
+}
+
+.get_temperature, .set_temperature, .fahrenheit, .kelvin {
+    display: flex;
+    flex-direction: column;
+}
+
+.get_temperature {
+    align-items: center;
+    margin: 0 10px 0 10px;
+}
+
+.set_temperature {
+    margin: 0 10px 0 10px;
+}
+
+.set_temperature span + span {
+    color: #505050;
+    margin: 2px 0 0 0;
+    visibility: hidden;
+}
+
+.fahrenheit, .kelvin {
+    text-align: center;
+}
+
+.get_temperature > input {
+    margin: 4px 0;
+}
+
+.get_temperature button {
+    width: 80%;
+    margin: 5px 0;
+    padding: 4px;
+}

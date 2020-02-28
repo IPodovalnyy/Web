@@ -1,4 +1,5 @@
-(function () {
+function array () {
+    console.clear();
     var array = [1, 8, 5, 4, 9, 3, 7, 6, 2];
     console.log("Исходный массив: " + array.join(" "));
 
@@ -37,6 +38,7 @@
         }
         return sum;
     }
+
     console.log("Сумма четных элементов массива: " + getSumEven(array));
 
     function createArray(numElement) {
@@ -71,4 +73,4 @@
 
     var arrayPow2Even = getPow2Even(arrayNum);
     console.log("Отфильтрованный массив: " + arrayPow2Even.join(" "));
-})();
+}

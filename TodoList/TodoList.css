@@ -1,0 +1,56 @@
+body {
+    font-family: arial, sans-serif;
+}
+
+.todo_list {
+    width: 50%;
+    min-width: 400px;
+    margin: 20px auto;
+    padding: 20px 20px;
+    background-color: #808080;
+    text-align: center;
+}
+
+.input_record {
+    display: inline-block;
+    margin: auto;
+    width: auto;
+    text-align: left;
+}
+
+.input_record span {
+    display: block;
+    padding-bottom: 5px;
+}
+
+.input_record label {
+    display: inline-block;
+}
+
+.input_record input {
+    width: 200px;
+    padding: 5px 0;
+    background-color: #A9A9A9;
+}
+
+.add_record button {
+    width: 150px;
+    padding: 5px 0;
+    background-color: #90ee90;
+    border-radius: 15px;
+}
+
+.display_record button {
+    width: 100px;
+    margin: 0 25px;
+    background-color: #F08080;
+    border-radius: 10px;
+}
+
+.display_record table {
+    margin: 30px auto 0;
+}
+
+.display_record td:first-child {
+    width: 200px;
+}

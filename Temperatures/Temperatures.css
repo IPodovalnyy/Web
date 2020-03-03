@@ -39,6 +39,7 @@ body {
 }
 
 .get_temperature > input {
+    text-align: center;
     margin: 4px 0;
 }
 

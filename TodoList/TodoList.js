@@ -1,3 +1,9 @@
+function pressEnter(event) {
+    if (event.keyCode === 13) {
+        addRecordToList();
+    }
+}
+
 function addRecordToList() {
     var input = document.getElementById("inputRecord");
     var record = input.value;
@@ -10,10 +16,11 @@ function addRecordToList() {
     input.value = "";
 
     var tableRecord = document.getElementById("tableRecords");
-    var bodyTable = tableRecord.getElementsByTagName("tbody")[0];
+    var bodyTable = tableRecord.getElementsByTagName("tBody")[0];
+    var numRows = bodyTable.rows.length;
 
-    bodyTable.insertRow(0);
-    var row = bodyTable.getElementsByTagName("tr")[0];
+    bodyTable.insertRow(numRows);
+    var row = bodyTable.getElementsByTagName("tr")[numRows];
 
     var td1 = document.createElement("td");
     td1.innerHTML = record;
@@ -24,6 +31,7 @@ function addRecordToList() {
     buttonDel.addEventListener("click", function () {
         var row = this.parentElement.parentElement;
         row.parentElement.removeChild(row);
+        displayScrollBar();
     });
 
     var td2 = document.createElement("td");
@@ -31,4 +39,20 @@ function addRecordToList() {
 
     row.appendChild(td1);
     row.appendChild(td2);
+
+    displayScrollBar();
+}
+
+function displayScrollBar() {
+    const paddingIncrease = 5;
+    var table = document.querySelector(".display_record table");
+    var height = table.scrollHeight;
+    var maxHeight = Number(window.getComputedStyle(table).maxHeight.replace(/\D/g, ""));
+
+    if (height > maxHeight + paddingIncrease) {
+        table.style.overflowY = "scroll";
+    }
+    else {
+        table.style.overflowY = "hidden";
+    }
 }

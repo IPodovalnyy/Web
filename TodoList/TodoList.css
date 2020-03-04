@@ -1,5 +1,6 @@
 body {
     font-family: arial, sans-serif;
+    color: #0019FF;
 }
 
 .todo_list {
@@ -7,7 +8,7 @@ body {
     min-width: 400px;
     margin: 20px auto;
     padding: 20px 20px;
-    background-color: #808080;
+    background-color: #77C2FF;
     text-align: center;
 }
 
@@ -29,28 +30,36 @@ body {
 
 .input_record input {
     width: 200px;
+    color: #0019FF;
     padding: 5px 0;
-    background-color: #A9A9A9;
+    background-color: #D1EBFF;
 }
 
 .add_record button {
+    border: none;
     width: 150px;
-    padding: 5px 0;
+    color: #1C5B1C;
     background-color: #90ee90;
+    padding: 5px 0;
     border-radius: 15px;
 }
 
 .display_record button {
     width: 100px;
+    border: none;
     margin: 0 25px;
-    background-color: #F08080;
+    color: #54450A;
+    background-color: #DBBB2B;
     border-radius: 10px;
 }
 
 .display_record table {
+    display: inline-block;
+    max-height: 210px;
     margin: 30px auto 0;
 }
 
 .display_record td:first-child {
     width: 200px;
+    word-break: break-all;
 }

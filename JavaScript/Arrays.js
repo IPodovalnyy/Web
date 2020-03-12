@@ -1,76 +1,59 @@
-function array () {
-    console.clear();
+(function useArrays() {
+    function getEvenNumbersArray(array) {
+        return array.filter(function (e) {
+
+            return e % 2 === 0
+        });
+    }
+
+    function getEvenNumbersSum(array) {
+        var evenArray = getEvenNumbersArray(array);
+        return evenArray.reduce(function (sum, currentItem) {
+
+            return sum + currentItem;
+        }, 0);
+    }
+
+    function createArray(elementsQuantity) {
+        var array = [];
+        for (var i = 1; i <= elementsQuantity; i++) {
+            array.push(i);
+        }
+
+        return array;
+    }
+
+    function getEvenNumbersPow2Array(array) {
+        var evenArray = getEvenNumbersArray(array);
+        return evenArray.map(function (e) {
+
+            return Math.pow(e, 2);
+        });
+    }
+
+    console.log("Работа с массивами:");
     var array = [1, 8, 5, 4, 9, 3, 7, 6, 2];
     console.log("Исходный массив: " + array.join(" "));
 
-    var firstItem = array.slice(0, 5);
-    console.log("Первые пять элементов: " + firstItem.join(" "));
+    var subarrayFirstItems = array.slice(0, 5);
+    console.log("Первые пять элементов: " + subarrayFirstItems.join(" "));
 
-    var lastItem = array.slice(array.length - 5);
-    console.log("Последние пять элементов: " + lastItem.join(" "));
+    var subarrayLastItems = array.slice(array.length - 5);
+    console.log("Последние пять элементов: " + subarrayLastItems.join(" "));
 
-    var arraySort = array.slice(0);
-    arraySort.sort(
-        function (e1, e2) {
-            return e2 - e1;
-        }
-    );
-    console.log("Сотрированный массив: " + arraySort.join(" "));
+    var sortedDescendingArray = array.slice(0);
+    sortedDescendingArray.sort(function (e1, e2) {
+        return e2 - e1;
+    });
 
-    function getEven(array) {
-        var arrayOut = [];
+    console.log("Сотрированный массив: " + sortedDescendingArray.join(" "));
 
-        for (var i = 0, j = 0; i < array.length; i++) {
-            if (array[i] % 2 === 0) {
-                arrayOut[j] = array[i];
-                j++;
-            }
-        }
-        return arrayOut;
-    }
+    console.log("Сумма четных элементов массива: " + getEvenNumbersSum(array));
 
-    function getSumEven(array) {
-        var arrayEven = getEven(array);
+    var arrayNumber = createArray(100);
+    console.log("Массив от 1 до 100:\n" + arrayNumber.join(" "));
 
-        var sum = 0;
-        for (var i = 0; i < arrayEven.length; i++) {
-            sum += arrayEven[i];
-        }
-        return sum;
-    }
-
-    console.log("Сумма четных элементов массива: " + getSumEven(array));
-
-    function createArray(numElement) {
-        var temp = [];
-        for (var i = 1; i <= numElement; i++) {
-            temp[i] = i;
-        }
-        return temp;
-    }
-
-    function filterPow2(num) {
-        var sqrtNum = Math.sqrt(num);
-        var epsilon = Math.pow(10, -6);
-        return sqrtNum - parseInt(sqrtNum) <= epsilon;
-    }
-
-    function getPow2Even(array) {
-        var arrayOut = [];
-        var arrayEven = getEven(array);
-
-        for (var i = 0, j = 0; i < arrayEven.length; i++) {
-            if (filterPow2(arrayEven[i])) {
-                arrayOut[j] = arrayEven[i];
-                j++;
-            }
-        }
-        return arrayOut;
-    }
-
-    var arrayNum = createArray(100);
-    console.log("Массив от 1 до 100: \n" + arrayNum.join(" "));
-
-    var arrayPow2Even = getPow2Even(arrayNum);
-    console.log("Отфильтрованный массив: " + arrayPow2Even.join(" "));
-}
+    var evenNumbersPow2Array = getEvenNumbersPow2Array(arrayNumber);
+    console.log("Массив квадратов четных чисел:\n" + evenNumbersPow2Array.join(" "));
+    console.log("\n\n");
+})();

@@ -10,19 +10,19 @@
 <div class="temperatures">
     <label class="get_temperature">
         <span>Введите температуру в С</span>
-        <input id="input_temperature" type="text" onkeypress="pressEnter(event)">
-        <button onclick="convertTemperature()">Перевести</button>
+        <input id="input_temperature" type="text">
+        <button type="button">Перевести</button>
     </label>
 
     <div class="set_temperature">
         <div class="fahrenheit">
-            <span>Температура в фарингейтах</span>
-            <span id="temperatureF">Здесть F</span>
+            <span>Температура в Фаренгейтах</span>
+            <span id="temperatureF" class="set_hidden_text">Здесть F</span>
         </div>
 
         <div class="kelvin">
-            <span>Температура в кельвинах</span>
-            <span id="temperatureK">Здесть K</span>
+            <span>Температура в Кельвинах</span>
+            <span id="temperatureK" class="set_hidden_text">Здесть K</span>
         </div>
     </div>
 </div>

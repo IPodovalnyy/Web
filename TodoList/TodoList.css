@@ -1,65 +1,97 @@
 body {
     font-family: arial, sans-serif;
+    font-size: 16px;
     color: #0019FF;
 }
 
 .todo_list {
     width: 50%;
-    min-width: 400px;
+    min-width: 450px;
     margin: 20px auto;
     padding: 20px 20px;
     background-color: #77C2FF;
-    text-align: center;
 }
 
-.input_record {
-    display: inline-block;
-    margin: auto;
-    width: auto;
-    text-align: left;
+.todo_list table {
+    margin: 20px auto;
 }
 
-.input_record span {
+.todo_list tr {
+    display: table;
+    width: 100%;
+}
+
+.todo_list th + th {
+    width: 200px;
+    vertical-align: bottom;
+}
+
+.todo_list th span {
     display: block;
+    text-align: left;
     padding-bottom: 5px;
 }
 
-.input_record label {
+.todo_list th label {
     display: inline-block;
 }
 
-.input_record input {
+.todo_list th input {
     width: 200px;
     color: #0019FF;
     padding: 5px 0;
     background-color: #D1EBFF;
 }
 
-.add_record button {
+.todo_list th button {
     border: none;
     width: 150px;
     color: #1C5B1C;
     background-color: #90ee90;
     padding: 5px 0;
     border-radius: 15px;
+    margin: 0 15px;
 }
 
-.display_record button {
-    width: 100px;
+.todo_list tbody {
+    margin: 20px 0 0 0;
+    display: block;
+    max-height: 220px;
+}
+
+.todo_list td + td {
+    width: 200px;
+    text-align: center;
+}
+
+.todo_list td button {
+    width: 80px;
     border: none;
-    margin: 0 25px;
+    margin: 0 5px;
+    font-size: 14px;
+    padding: 3px;
     color: #54450A;
     background-color: #DBBB2B;
     border-radius: 10px;
 }
 
-.display_record table {
-    display: inline-block;
-    max-height: 210px;
-    margin: 30px auto 0;
-}
-
-.display_record td:first-child {
+.todo_list td:first-child {
     width: 200px;
     word-break: break-all;
+}
+
+.overflowBodyTableAuto {
+    overflow-Y: auto;
+}
+
+.overflowBodyTableHidden {
+    overflow-Y: hidden;
+}
+
+.displayRowNone {
+    display: none;
+}
+
+.displayRowTable {
+    display: table;
 }

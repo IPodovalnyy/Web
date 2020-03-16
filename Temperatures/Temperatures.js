@@ -51,7 +51,7 @@ function clearInputOutputField(input) {
 }
 
 function pressEnter(event) {
-    if (event.key === 13) {
+    if (event.key === "Enter") {
         convertTemperature();
     }
 }

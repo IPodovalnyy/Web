@@ -87,11 +87,3 @@ body {
 .overflowBodyTableHidden {
     overflow-Y: hidden;
 }
-
-.displayRowNone {
-    display: none;
-}
-
-.displayRowTable {
-    display: table;
-}

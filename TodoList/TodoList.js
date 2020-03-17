@@ -57,8 +57,7 @@ function addRecordToList() {
 }
 
 function createEditRow(rowToEdit) {
-    rowToEdit.classList.remove("displayRowTable");
-    rowToEdit.classList.add("displayRowNone");
+    rowToEdit.style.display = "none";
 
     var inputEditRecord = document.createElement("input");
     inputEditRecord.setAttribute("type", "text");
@@ -71,8 +70,7 @@ function createEditRow(rowToEdit) {
     buttonCancel.innerHTML = "Отменить";
     buttonCancel.addEventListener("click", function () {
         row.parentElement.removeChild(row);
-        rowToEdit.classList.remove("displayRowNone");
-        rowToEdit.classList.add("displayRowTable");
+        rowToEdit.style.display = "table";
     });
 
     var buttonSave = document.createElement("button");
@@ -86,8 +84,7 @@ function createEditRow(rowToEdit) {
         }
         rowToEdit.cells[0].innerHTML = newRecord;
         row.parentElement.removeChild(row);
-        rowToEdit.classList.remove("displayRowNone");
-        rowToEdit.classList.add("displayRowTable");
+        rowToEdit.style.display = "table";
     });
 
     var td2 = document.createElement("td");

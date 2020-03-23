@@ -1,16 +1,11 @@
-(function useObjects() {
-    console.log("Работа с объектами:");
-
-    function getCountriesWithCitiesMaxQuantity(array) {
-        var citiesMaxQuantity = array.reduce(function (max, current) {
-            if (current.cities.length > max) {
-                max = current.cities.length;
-            }
-            return max;
+(function () {
+    function getCountriesWithMaxCitiesQuantity(countries) {
+        var citiesMaxQuantity = countries.reduce(function (max, country) {
+            return Math.max(max, country.cities.length);
         }, 0);
 
-        return array.filter(function (current) {
-            return Number(current.cities.length) === Number(citiesMaxQuantity);
+        return countries.filter(function (country) {
+            return country.cities.length === citiesMaxQuantity;
         });
     }
 
@@ -18,6 +13,14 @@
         return country.cities.reduce(function (totalPopulation, city) {
             return totalPopulation + city.population;
         }, 0);
+    }
+
+    function getCountries(countriesList) {
+        var countries = {};
+        countriesList.forEach(function (e) {
+            countries[e.name] = getTotalPopulation(e);
+        });
+        return countries;
     }
 
     var countriesList = [
@@ -95,19 +98,19 @@
         }
     ];
 
-    var countriesWithCitiesMaxQuantity = getCountriesWithCitiesMaxQuantity(countriesList);
+    console.log("Работа с объектами:");
+
+    var countriesWithCitiesMaxQuantity = getCountriesWithMaxCitiesQuantity(countriesList);
     console.log("Страны с максимальным числом городов:\n");
     countriesWithCitiesMaxQuantity.forEach(function (e) {
         console.log(e.name);
     });
 
     console.log("\nСтрана/численность по стране:\n");
-    var countries = {};
-    countriesList.forEach(function (e) {
-        countries[e.name] = getTotalPopulation(e);
-    });
+    var countries = getCountries(countriesList);
 
     for (var name in countries) {
+        //noinspection JSUnfilteredForInLoop
         console.log(name + ": " + countries[name]);
     }
 })();

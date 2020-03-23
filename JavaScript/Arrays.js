@@ -1,21 +1,20 @@
-(function useArrays() {
+(function () {
     function getEvenNumbersArray(array) {
         return array.filter(function (e) {
-
-            return e % 2 === 0
+            return e % 2 === 0;
         });
     }
 
     function getEvenNumbersSum(array) {
         var evenArray = getEvenNumbersArray(array);
         return evenArray.reduce(function (sum, currentItem) {
-
             return sum + currentItem;
         }, 0);
     }
 
     function createArray(elementsQuantity) {
         var array = [];
+
         for (var i = 1; i <= elementsQuantity; i++) {
             array.push(i);
         }
@@ -26,7 +25,6 @@
     function getEvenNumbersPow2Array(array) {
         var evenArray = getEvenNumbersArray(array);
         return evenArray.map(function (e) {
-
             return Math.pow(e, 2);
         });
     }
@@ -35,11 +33,11 @@
     var array = [1, 8, 5, 4, 9, 3, 7, 6, 2];
     console.log("Исходный массив: " + array.join(" "));
 
-    var subarrayFirstItems = array.slice(0, 5);
-    console.log("Первые пять элементов: " + subarrayFirstItems.join(" "));
+    var firstItemsSubarray = array.slice(0, 5);
+    console.log("Первые пять элементов: " + firstItemsSubarray.join(" "));
 
-    var subarrayLastItems = array.slice(array.length - 5);
-    console.log("Последние пять элементов: " + subarrayLastItems.join(" "));
+    var lastItemsSubarray = array.slice(array.length - 5);
+    console.log("Последние пять элементов: " + lastItemsSubarray.join(" "));
 
     var sortedDescendingArray = array.slice(0);
     sortedDescendingArray.sort(function (e1, e2) {

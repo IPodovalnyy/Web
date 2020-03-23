@@ -57,6 +57,7 @@ body {
     margin: 20px 0 0 0;
     display: block;
     max-height: 220px;
+    overflow-y: auto;
 }
 
 .todo_list td + td {
@@ -75,15 +76,11 @@ body {
     border-radius: 10px;
 }
 
+.todo_list button:hover {
+    cursor: pointer;
+}
+
 .todo_list td:first-child {
     width: 200px;
     word-break: break-all;
-}
-
-.overflowBodyTableAuto {
-    overflow-Y: auto;
-}
-
-.overflowBodyTableHidden {
-    overflow-Y: hidden;
 }

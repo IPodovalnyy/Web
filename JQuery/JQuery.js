@@ -1,115 +1,101 @@
 $(document).ready(function () {
     $("button").on("click", addRecordToList);
 
-    $("input_record").on("keypress", function () {
+    $("#input_record").on("keypress", function () {
         if (event.key === "Enter") {
             addRecordToList();
         }
     });
-});
 
-function addRecordToList() {
-    var input = $("#input_record")[0];
-    var record = input.value;
+    function addRecordToList() {
+        var input = $("#input_record")[0];
+        var record = $(input).val();
 
-    if (record.trim() === "") {
-        alert("Введите запись");
-        return;
-    }
-    input.value = "";
-
-    var bodyTable = $("tbody")[0];
-    var buttonDel = $("<button type='button'>Удалить<br>запись</button>");
-    buttonDel.on("click", function () {
-        var row = this.closest("tr");
-        row.parentElement.removeChild(row);
-        displayScrollBar(bodyTable);
-    });
-
-    var buttonEdit = $("<button type='button'>Изменить<br>запись</button>");
-    buttonEdit.on("click", function () {
-        var row = $(this.closest("tr"));
-        createEditRow(row);
-    });
-
-    var row = $(
-        "<tr>" +
-        "<td></td>" +
-        "<td></td>" +
-        "</tr>");
-
-    var td = row.children("td");
-    $(td[0]).text(record);
-    buttonDel.appendTo(td[1]);
-    buttonEdit.appendTo(td[1]);
-
-    row.appendTo(bodyTable);
-
-    displayScrollBar(bodyTable);
-}
-
-function createEditRow(rowToEdit) {
-    rowToEdit.hide();
-
-    var inputEditRecord = $("<input type='text'>");
-    var text = $(rowToEdit.children("td")[0]).text();
-  // inputEditRecord.text(text);
-    inputEditRecord.html(text);
-    inputEditRecord.appendTo("tbody");
-
-    var buttonCancel = $("<button type='button'>Отменить</button>");
-    buttonCancel.on("click", function () {
-        row.remove();
-        rowToEdit.show();
-    });
-
-    var buttonSave = $("<button type='button'>Применить</button>");
-    buttonSave.on("click", function () {
-        var row = this.closest("tr");
-        var newRecord = $(row.children("input")[0]).text();
-        if (newRecord.trim() === "") {
+        if (record.trim() === "") {
             alert("Введите запись");
             return;
         }
-        $(rowToEdit.children("td")).text(newRecord);
-        row.remove();
-        rowToEdit.show();
-    });
 
-    var row = $(
-        "<tr>" +
-        "<td></td>" +
-        "<td></td>" +
-        "</tr>");
+        input.value = "";
 
-    var td = row.children("td");
-    inputEditRecord.appendTo(td[0]);
-    buttonCancel.appendTo(td[1]);
-    buttonSave.appendTo(td[1]);
+        var buttonDel = $("<button type='button'>Удалить<br>запись</button>");
+        buttonDel.on("click", function () {
+            var row = this.closest("tr");
+            row.remove();
+        });
 
-    var parentRow = rowToEdit.closest("tr");
-    row.insertBefore(parentRow);
-   // row.appendTo("tbody");
+        var buttonEdit = $("<button type='button'>Изменить<br>запись</button>");
+        buttonEdit.on("click", function () {
+            var row = $(this.closest("tr"));
+            createEditRow(row);
+        });
 
+        var row = $(
+            "<tr>" +
+            "<td></td>" +
+            "<td></td>" +
+            "</tr>");
 
-    /*
-     bodyTable.insertRow(rowToEdit.rowIndex);
-     var row = bodyTable.getElementsByTagName("tr")[rowToEdit.rowIndex];
-     */
-}
+        var td = row.children("td");
 
-function displayScrollBar(bodyTable) {
-    var paddingIncrease = 5;
-    var height = bodyTable.scrollHeight;
-    var maxHeight = Number(window.getComputedStyle(bodyTable).maxHeight.replace(/\D/g, ""));
+        $(td[0]).text(record);
+        buttonDel.appendTo(td[1]);
+        buttonEdit.appendTo(td[1]);
 
-    if (height > maxHeight + paddingIncrease) {
-        bodyTable.classList.remove("overflowBodyTableHidden");
-        bodyTable.classList.add("overflowBodyTableAuto");
+        var bodyTableList = $("tbody");
+
+        if (bodyTableList.length === 0) {
+            var bodyTable = $("<tbody></tbody>");
+            bodyTable.appendTo($("#tableRecords"));
+        } else {
+            bodyTable = bodyTableList[0];
+        }
+
+        row.appendTo(bodyTable);
     }
-    else {
-        bodyTable.classList.remove("overflowBodyTableAuto");
-        bodyTable.classList.add("overflowBodyTableHidden");
 
+    function createEditRow(rowToEdit) {
+        rowToEdit.hide();
+
+        var inputEditRecord = $("<input type='text'>");
+        var text = $(rowToEdit.children("td")[0]).text();
+
+        inputEditRecord.val(text);
+        inputEditRecord.appendTo("tbody");
+
+        var buttonCancel = $("<button type='button'>Отменить</button>");
+        buttonCancel.on("click", function () {
+            row.remove();
+            rowToEdit.show();
+        });
+
+        var buttonSave = $("<button type='button'>Применить</button>");
+        buttonSave.on("click", function () {
+            var row = $(this.closest("tr"));
+            var newRecord = $(row.find("input")).val();
+
+            if (newRecord.trim() === "") {
+                alert("Введите запись");
+                return;
+            }
+
+            $(rowToEdit.children("td")[0]).text(newRecord);
+            row.remove();
+            rowToEdit.show();
+        });
+
+        var row = $(
+            "<tr>" +
+            "<td></td>" +
+            "<td></td>" +
+            "</tr>");
+
+        var td = row.children("td");
+        inputEditRecord.appendTo(td[0]);
+        buttonCancel.appendTo(td[1]);
+        buttonSave.appendTo(td[1]);
+
+        var parentRow = rowToEdit.closest("tr");
+        row.insertBefore(parentRow);
     }
-}
+});

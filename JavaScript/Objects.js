@@ -17,9 +17,11 @@
 
     function getCountries(countriesList) {
         var countries = {};
+
         countriesList.forEach(function (e) {
             countries[e.name] = getTotalPopulation(e);
         });
+
         return countries;
     }
 

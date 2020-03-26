@@ -6,8 +6,7 @@
     }
 
     function getEvenNumbersSum(array) {
-        var evenArray = getEvenNumbersArray(array);
-        return evenArray.reduce(function (sum, currentItem) {
+        return getEvenNumbersArray(array).reduce(function (sum, currentItem) {
             return sum + currentItem;
         }, 0);
     }
@@ -23,8 +22,7 @@
     }
 
     function getEvenNumbersPow2Array(array) {
-        var evenArray = getEvenNumbersArray(array);
-        return evenArray.map(function (e) {
+        return getEvenNumbersArray(array).map(function (e) {
             return Math.pow(e, 2);
         });
     }

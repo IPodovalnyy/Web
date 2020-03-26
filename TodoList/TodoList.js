@@ -20,13 +20,13 @@ document.addEventListener("DOMContentLoaded", function () {
         input.value = "";
 
         var tableRecord = document.getElementById("tableRecords");
-        var listBodyTable = tableRecord.getElementsByTagName("tbody");
+        var bodyTableList = tableRecord.getElementsByTagName("tbody");
 
-        if (listBodyTable.length === 0) {
+        if (bodyTableList.length === 0) {
             var bodyTable = document.createElement("tbody");
             tableRecord.appendChild(bodyTable);
         } else {
-            bodyTable = listBodyTable[0];
+            bodyTable = bodyTableList[0];
         }
 
         var numRows = bodyTable.rows.length;

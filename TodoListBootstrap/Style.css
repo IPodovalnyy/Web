@@ -1,0 +1,40 @@
+body {
+    font-family: arial, sans-serif;
+    font-size: 16px;
+    color: #0019FF;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.container label {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+.container th {
+    border: none;
+    vertical-align: center;
+    text-align: center;
+}
+
+.container td + td {
+    text-align: center;
+}
+
+.container button {
+    width: 150px;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.table-striped tbody > tr:nth-child(odd) {
+    background-color: #F0F8FF;
+}
+
+.table-striped tbody > tr:nth-child(even) {
+    background-color: #fff;
+}

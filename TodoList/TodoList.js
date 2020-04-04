@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         input.value = "";
 
-        var tableRecord = document.getElementById("tableRecords");
+        var tableRecord = document.getElementById("table_records");
         var bodyTableList = tableRecord.getElementsByTagName("tbody");
 
         if (bodyTableList.length === 0) {
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var row = bodyTable.getElementsByTagName("tr")[numRows];
 
         var td1 = document.createElement("td");
-        td1.innerHTML = record;
+        td1.textContent = record;
 
         var buttonDel = document.createElement("button");
         buttonDel.innerHTML = "Удалить<br>запись";
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
-            rowToEdit.cells[0].innerHTML = newRecord;
+            rowToEdit.cells[0].textContent = newRecord;
             row.parentElement.removeChild(row);
             rowToEdit.style.display = "table";
         });

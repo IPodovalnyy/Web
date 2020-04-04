@@ -1,32 +1,32 @@
 $(document).ready(function () {
-    $("button").on("click", addRecordToList);
+    $("#add_button").click("click", addRecordToList);
 
-    $("#input_record").on("keypress", function () {
+    $("#input_record").click("keypress", function () {
         if (event.key === "Enter") {
             addRecordToList();
         }
     });
 
     function addRecordToList() {
-        var input = $("#input_record")[0];
-        var record = $(input).val();
+        var input = $("#input_record").eq(0);
+        var record = input.val();
 
         if (record.trim() === "") {
             alert("Введите запись");
             return;
         }
 
-        input.value = "";
+        input.val("");
 
-        var buttonDel = $("<button type='button'>Удалить<br>запись</button>");
-        buttonDel.on("click", function () {
+        var delButton = $("<button type='button'>Удалить<br>запись</button>");
+        delButton.click("click", function () {
             var row = this.closest("tr");
             row.remove();
         });
 
-        var buttonEdit = $("<button type='button'>Изменить<br>запись</button>");
-        buttonEdit.on("click", function () {
-            var row = $(this.closest("tr"));
+        var editButton = $("<button type='button'>Изменить<br>запись</button>");
+        editButton.click("click", function () {
+            var row = $(this).closest("tr");
             createEditRow(row);
         });
 
@@ -38,40 +38,32 @@ $(document).ready(function () {
 
         var td = row.children("td");
 
-        $(td[0]).text(record);
-        buttonDel.appendTo(td[1]);
-        buttonEdit.appendTo(td[1]);
+        (td.eq(0)).text(record);
+        delButton.appendTo(td.eq(1));
+        editButton.appendTo(td.eq(1));
 
-        var bodyTableList = $("tbody");
-
-        if (bodyTableList.length === 0) {
-            var bodyTable = $("<tbody></tbody>");
-            bodyTable.appendTo($("#tableRecords"));
-        } else {
-            bodyTable = bodyTableList[0];
-        }
-
-        row.appendTo(bodyTable);
+        var tableBody = $(".todo_list tbody").eq(0);
+        row.appendTo(tableBody);
     }
 
     function createEditRow(rowToEdit) {
         rowToEdit.hide();
 
-        var inputEditRecord = $("<input type='text'>");
-        var text = $(rowToEdit.children("td")[0]).text();
+        var editRecordInput = $("<input type='text'>");
+        var text = (rowToEdit.children("td").eq(0)).text();
 
-        inputEditRecord.val(text);
-        inputEditRecord.appendTo("tbody");
+        editRecordInput.val(text);
+        editRecordInput.appendTo("tbody");
 
-        var buttonCancel = $("<button type='button'>Отменить</button>");
-        buttonCancel.on("click", function () {
+        var cancelButton = $("<button type='button'>Отменить</button>");
+        cancelButton.click("click", function () {
             row.remove();
             rowToEdit.show();
         });
 
-        var buttonSave = $("<button type='button'>Применить</button>");
-        buttonSave.on("click", function () {
-            var row = $(this.closest("tr"));
+        var saveButton = $("<button type='button'>Применить</button>");
+        saveButton.click("click", function () {
+            var row = $(this).closest("tr");
             var newRecord = $(row.find("input")).val();
 
             if (newRecord.trim() === "") {
@@ -79,7 +71,7 @@ $(document).ready(function () {
                 return;
             }
 
-            $(rowToEdit.children("td")[0]).text(newRecord);
+            (rowToEdit.children("td").eq(0)).text(newRecord);
             row.remove();
             rowToEdit.show();
         });
@@ -91,9 +83,10 @@ $(document).ready(function () {
             "</tr>");
 
         var td = row.children("td");
-        inputEditRecord.appendTo(td[0]);
-        buttonCancel.appendTo(td[1]);
-        buttonSave.appendTo(td[1]);
+
+        editRecordInput.appendTo(td.eq(0));
+        cancelButton.appendTo(td.eq(1));
+        saveButton.appendTo(td.eq(1));
 
         var parentRow = rowToEdit.closest("tr");
         row.insertBefore(parentRow);

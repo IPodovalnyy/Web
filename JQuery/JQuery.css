@@ -21,40 +21,38 @@ body {
     width: 100%;
 }
 
-.todo_list th + th {
-    width: 200px;
-    vertical-align: bottom;
+.add_records {
+    text-align: center;
 }
 
-.todo_list th span {
+.todo_list span {
     display: block;
     text-align: left;
     padding-bottom: 5px;
 }
 
-.todo_list th label {
+.todo_list label {
     display: inline-block;
 }
 
-.todo_list th input {
+.todo_list input {
     width: 200px;
     color: #0019FF;
     padding: 5px 0;
     background-color: #D1EBFF;
 }
 
-.todo_list th button {
+.add_records button {
     border: none;
     width: 150px;
     color: #1C5B1C;
     background-color: #90ee90;
     padding: 5px 0;
     border-radius: 15px;
-    margin: 0 15px;
+    margin: 0 25px;
 }
 
 .todo_list tbody {
-    margin: 20px 0 0 0;
     display: block;
     max-height: 220px;
     overflow-y: auto;

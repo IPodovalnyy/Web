@@ -3,26 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>TodoList</title>
+    <link rel="stylesheet" type="text/css" href="normalize.css">
     <link rel="stylesheet" type="text/css" href="JQuery.css">
-
 </head>
 <body>
 <div class="todo_list">
-    <table id="tableRecords">
-        <thead>
-        <tr>
-            <th>
-                <label>
-                    <span>Добавить запись</span>
-                    <input id="input_record" type="text" placeholder="Введите текст">
-                </label>
-            </th>
+    <div class="add_records">
+        <label>
+            <span>Добавить запись</span>
+            <input id="input_record" type="text" placeholder="Введите текст">
+        </label>
 
-            <th>
-                <button>Сохранить</button>
-            </th>
-        </tr>
-        </thead>
+        <button id="add_button">Сохранить</button>
+    </div>
+
+    <table id="table_records">
+        <tbody></tbody>
     </table>
 </div>
 
